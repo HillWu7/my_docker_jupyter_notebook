@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  my_docker_jupyter_notebook:
+    image: ghcr.io/hillwu7/my_docker_jupyter_notebook:lastest
+    ports:
+      - 8888:8888
+    volumes:
+      - ./sync_note:/app/sync_note
+    environment:
+      - JUPYTER_TOKEN=my_docker_jupyter_notebook_token
