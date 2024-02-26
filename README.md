@@ -22,9 +22,17 @@ services:
       - /sync_note:/app/sync_note
     environment:
       - JUPYTER_TOKEN=my_docker_jupyter_notebook_token
+      - GITHUB_USERNAME=my_github_user_name
+      - GITHUB_TOKEN=my_github_personal_token
 ```
 
-## Step 3: Start the Docker container with docker-compose
+## Step 3: login github container registry with username and token
+
+```bash
+docker login ghcr.io -n my_github_user_name -p my_github_personal_token
+```
+
+## Step 4: Start the Docker container with docker-compose
 Make sure to change the path to the root of the `docker-compose.yaml` folder and run the following command:
 
 ```bash
@@ -33,7 +41,7 @@ docker-compose up
 
 This command builds the Docker image (if not already built) and starts the Jupyter Notebook server. Access the notebook at [http://localhost:8888/tree?token=my_docker_jupyter_notebook_token](http://localhost:8888/tree?token=my_docker_jupyter_notebook_token) in your web browser.
 
-## Step 4: Stop and remove all services (Optional)
+## Step 5: Stop and remove all services (Optional)
 To stop and remove all services, use the following command:
 
 ```bash

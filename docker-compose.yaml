@@ -9,3 +9,5 @@ services:
       - ./sync_note:/app/sync_note
     environment:
       - JUPYTER_TOKEN=my_docker_jupyter_notebook_token
+      - GITHUB_USERNAME=my_github_user_name
+      - GITHUB_TOKEN=my_github_personal_token
